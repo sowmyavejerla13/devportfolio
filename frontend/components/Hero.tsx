@@ -1,27 +1,34 @@
 export default function Hero() {
   return (
-    <section className="flex flex-col items-center justify-center h-screen">
-      <h1 className="text-5xl font-bold text-blue-600">
-        Hi, I'm Sowmya 👋
-      </h1>
+    <section className="min-h-[80vh] flex items-center bg-gray-100">
+      <div className="max-w-7xl mx-auto px-8">
+        <p className="text-blue-600 font-semibold mb-3">
+          Hello, I'm
+        </p>
 
-      <p className="text-xl mt-4 text-gray-700">
-        Senior Golang Backend Engineer
-      </p>
+        <h1 className="text-6xl font-extrabold text-gray-900">
+          Sowmya Vejerla
+        </h1>
 
-      <p className="mt-6 max-w-xl text-center text-gray-600">
-        I build scalable backend systems using Golang, Microservices,
-        PostgreSQL, Kafka, Docker, and Kubernetes.
-      </p>
+        <h2 className="text-3xl text-gray-600 mt-4">
+          Golang Backend Engineer
+        </h2>
 
-      <div className="mt-8 flex gap-4">
-        <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
-          View Projects
-        </button>
+        <p className="max-w-2xl mt-6 text-lg text-gray-600 leading-8">
+          Passionate about building scalable backend systems with
+          Golang, Microservices, PostgreSQL, Kafka, Docker,
+          Kubernetes, and cloud-native technologies.
+        </p>
 
-        <button className="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50">
-          Read Blog
-        </button>
+        <div className="flex gap-5 mt-10">
+          <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition">
+            View Projects
+          </button>
+
+          <button className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition">
+            Read Blog
+          </button>
+        </div>
       </div>
     </section>
   );
