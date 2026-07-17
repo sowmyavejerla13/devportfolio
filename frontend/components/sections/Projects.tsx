@@ -7,7 +7,7 @@ import FadeIn from "@/components/animations/FadeIn";
 export default function Projects() {
   return (
     <FadeIn>
-      <section id="personal-projects" className="py-20 bg-white">
+      <section id="personal-projects" className="py-20 bg-background">
         <div className="max-w-6xl mx-auto px-8">
           <h2 className="text-4xl font-bold text-center mb-12">
             Featured Projects
@@ -21,7 +21,7 @@ export default function Projects() {
                     {project.title}
                   </h3>
 
-                  <p className="mt-4 text-slate-600">
+                  <p className="mt-4 text-muted-foreground">
                     {project.description}
                   </p>
 

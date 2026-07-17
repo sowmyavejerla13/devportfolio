@@ -1,85 +1,39 @@
-import { personalProjects } from "@/data/personalProjects";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/animations/FadeIn";
+import PersonalProjectCard from "@/components/PersonalProjectCard";
+import { personalProjects } from "@/data/personalProjects";
 
 export default function PersonalProjects() {
   return (
     <FadeIn>
-        <section id="personal-projects" className="py-20 bg-slate-50">
+      <section
+        id="personal-projects"
+        className="scroll-mt-24 py-20 bg-muted/30"
+      >
         <div className="max-w-6xl mx-auto px-8">
-
-            <h2 className="text-4xl font-bold text-center mb-4">
+          <h2 className="mb-4 text-center text-4xl font-bold">
             Personal Engineering Projects
-            </h2>
+          </h2>
 
-            <p className="text-center text-slate-600 mb-12">
-            Projects I build to learn, experiment and demonstrate production-grade backend engineering skills.
-            </p>
+          <p className="mb-12 text-center text-muted-foreground">
+            Projects I build to learn, experiment, and demonstrate
+            production-grade backend engineering skills.
+          </p>
 
-            <div className="grid md:grid-cols-2 gap-8">
-
+          <div className="grid gap-8 md:grid-cols-2">
             {personalProjects.map((project) => (
-                <Card key={project.title}>
-
-                <CardContent className="p-6">
-
-                    <div className="flex justify-between items-center">
-
-                    <h3 className="text-2xl font-bold">
-                        {project.title}
-                    </h3>
-
-                    <Badge>
-                        {project.status}
-                    </Badge>
-
-                    </div>
-
-                    <p className="mt-4 text-slate-600">
-                    {project.description}
-                    </p>
-
-                    <div className="flex flex-wrap gap-2 mt-5">
-
-                    {project.technologies.map((tech) => (
-                        <Badge key={tech}>
-                        {tech}
-                        </Badge>
-                    ))}
-
-                    </div>
-
-                    <div className="mt-6">
-
-                    {project.github ? (
-                        <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >
-                        <Button>
-                            View GitHub
-                        </Button>
-                        </a>
-                    ) : (
-                        <Button disabled>
-                        Coming Soon
-                        </Button>
-                    )}
-
-                    </div>
-
-                </CardContent>
-
-                </Card>
-            ))}
-
-            </div>
-
+                <PersonalProjectCard
+                    key={project.title}
+                    title={project.title}
+                    status={project.status}
+                    description={project.description}
+                    technologies={project.technologies}
+                    github={project.github}
+                    demo={project.demo}
+                />
+                ))}
+          </div>
         </div>
-        </section>
+      </section>
     </FadeIn>
   );
 }

@@ -1,78 +1,140 @@
-"use client";
-
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-
-const technologies = [
-  "Go",
-  "PostgreSQL",
-  "Kafka",
-  "Docker",
-  "Kubernetes",
-  "Microservices",
-];
+import FadeIn from "@/components/animations/FadeIn";
+import {
+  ArrowDown,
+  Download,
+  Briefcase,
+  Server,
+  Cpu,
+} from "lucide-react";
 
 export default function Hero() {
-  const scrollToProjects = () => {
-    document.getElementById("personal-projects")?.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
-
   return (
-    <section className="min-h-[90vh] flex items-center bg-gradient-to-br from-slate-50 to-blue-100">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center px-8">
-        {/* Left Side */}
-        <div>
-          <p className="text-blue-600 font-semibold text-lg">
-            👋 Hello, I'm
-          </p>
+    <section
+      id="hero"
+      className="relative flex min-h-screen items-center overflow-hidden section-padding"
+    >
+      {/* Background */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-100 via-background to-blue-100 dark:from-slate-950 dark:via-background dark:to-slate-900" />
 
-          <h1 className="text-6xl font-extrabold mt-3">
+      {/* Decorative Blur */}
+      <div className="absolute -top-24 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-blue-500/20 blur-3xl" />
+
+      <div className="container-width">
+
+        <FadeIn>
+
+          <span className="inline-block rounded-full border bg-background px-4 py-2 text-sm font-medium shadow-sm">
+            👋 Hello, I'm
+          </span>
+
+          <h1 className="mt-6 text-5xl font-extrabold tracking-tight md:text-7xl">
             Sowmya Vejerla
           </h1>
 
-          <h2 className="text-3xl text-slate-600 mt-4">
-            Senior Backend Engineer
-          </h2>
+          <h2 className="mt-5 text-2xl font-semibold text-primary md:text-3xl">
+          Senior Golang Backend Engineer
+        </h2>
 
-          <p className="mt-8 text-lg leading-8 text-slate-700">
-            Building scalable backend systems using Golang,
-            Microservices, PostgreSQL, Kafka, Docker and Kubernetes.
+        <p className="mt-3 text-lg font-medium text-muted-foreground">
+          Building scalable backend systems with Go, Microservices, Distributed Systems & Cloud Technologies
+        </p>
+
+          <p className="mt-8 max-w-3xl text-lg leading-8 text-muted-foreground md:text-xl">
+            Passionate backend engineer with experience designing scalable
+            enterprise applications across healthcare, telecommunications,
+            and SaaS domains using Go, Python, PHP, Microservices,
+            PostgreSQL, Kafka, Docker and Kubernetes.
           </p>
 
-          <div className="flex gap-4 mt-10">
-            <Button size="lg" onClick={scrollToProjects}>
-              View Projects
-            </Button>
+          {/* Buttons */}
+
+          <div className="mt-10 flex flex-wrap gap-4">
 
             <a href="/resume.pdf" download>
-              <Button variant="outline" size="lg">
+              <Button size="lg">
+                <Download className="mr-2 h-5 w-5" />
                 Download Resume
               </Button>
             </a>
+
+            <a href="#personal-projects">
+              <Button
+                variant="outline"
+                size="lg"
+              >
+                View Projects
+                <ArrowDown className="ml-2 h-5 w-5" />
+              </Button>
+            </a>
+
+          </div>
+          <div className="mt-8 flex flex-col gap-2 text-muted-foreground">
+
+            <div className="flex items-center gap-2">
+              📍
+              <span>Dammam, Saudi Arabia</span>
+            </div>
+
+            <div className="flex items-center gap-2">
+              🌍
+              <span>Open to Remote opportunities worldwide</span>
+            </div>
+
+            <div className="flex items-center gap-2">
+              🏢
+              <span>Open to On-site opportunities in Dammam</span>
+            </div>
+
           </div>
 
-          <div className="flex flex-wrap gap-3 mt-10">
-            {technologies.map((tech) => (
-              <Badge key={tech}>
-                {tech}
-              </Badge>
-            ))}
-          </div>
-        </div>
+          {/* Highlights */}
 
-        {/* Right Side */}
-        <div className="flex justify-center">
-          <Image
-            src="/images/profile.jpg"
-            alt="Sowmya Vejerla"
-            width={350}
-            height={350}
-            className="rounded-full shadow-2xl border-8 border-white object-cover"
-          />
-        </div>
+          <div className="mt-16 grid gap-6 md:grid-cols-3">
+
+            <div className="rounded-xl border bg-background/70 p-6 shadow-sm backdrop-blur">
+              <Briefcase className="mb-3 h-8 w-8 text-blue-600" />
+
+              <h3 className="font-semibold">
+                11+ Years Experience
+              </h3>
+
+              <p className="mt-2 text-sm text-muted-foreground">
+                Delivering enterprise-grade backend applications across
+                healthcare, telecom and SaaS domains.
+              </p>
+            </div>
+
+            <div className="rounded-xl border bg-background/70 p-6 shadow-sm backdrop-blur">
+              <Server className="mb-3 h-8 w-8 text-blue-600" />
+
+              <h3 className="font-semibold">
+                Backend Engineering
+              </h3>
+
+              <p className="mt-2 text-sm text-muted-foreground">
+                REST APIs, Microservices, Distributed Systems,
+                Authentication and Performance Optimization.
+              </p>
+            </div>
+
+            <div className="rounded-xl border bg-background/70 p-6 shadow-sm backdrop-blur">
+              <Cpu className="mb-3 h-8 w-8 text-blue-600" />
+
+              <h3 className="font-semibold">
+                Cloud Native
+              </h3>
+
+              <p className="mt-2 text-sm text-muted-foreground">
+                Docker, Kubernetes, Kafka, PostgreSQL, Redis,
+                CI/CD and scalable backend architectures.
+              </p>
+            </div>
+
+          </div>
+
+        </FadeIn>
+
       </div>
     </section>
   );

@@ -32,13 +32,13 @@ const learning = [
 export default function Learning() {
   return (
     <FadeIn>
-        <section id="learning" className="py-20 bg-white">
+        <section id="learning" className="py-20 bg-background">
         <div className="max-w-6xl mx-auto px-8">
             <h2 className="text-4xl font-bold text-center mb-4">
             Currently Learning
             </h2>
 
-            <p className="text-center text-slate-600 mb-12">
+            <p className="text-center text-muted-foreground mb-12">
             Continuous learning is a core part of my engineering journey.
             </p>
 
@@ -56,7 +56,7 @@ export default function Learning() {
                     </Badge>
                     </div>
 
-                    <p className="text-slate-600">
+                    <p className="text-muted-foreground">
                     {item.description}
                     </p>
                 </CardContent>

@@ -8,6 +8,7 @@ import Learning from "@/components/sections/Learning";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
 import Stats from "@/components/sections/Stats";
+import EnterpriseProjects from "@/components/sections/EnterpriseProjects";
 
 export default function Home() {
   return (
@@ -16,9 +17,10 @@ export default function Home() {
       <Hero />
       <Stats />
       <About />
-      <Experience />
-      <PersonalProjects  />
       <Skills />
+      <Experience />
+      <EnterpriseProjects />
+      <PersonalProjects />
       <Learning />
       <Contact />
       <Footer />

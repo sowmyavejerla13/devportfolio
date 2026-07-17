@@ -16,15 +16,15 @@ const stats = [
     label: "Technologies",
   },
   {
-    number: "8+",
-    label: "Projects Planned",
+    number: "10+",
+    label: "Enterprise Backend Systems",
   },
 ];
 
 export default function Stats() {
   return (
     <FadeIn>
-      <section className="py-20 bg-slate-100">
+      <section className="py-20 bg-muted">
         <div className="max-w-6xl mx-auto px-8">
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -40,7 +40,7 @@ export default function Stats() {
                   {item.number}
                 </h2>
 
-                <p className="mt-3 text-slate-600">
+                <p className="mt-3 text-muted-foreground">
                   {item.label}
                 </p>
 
