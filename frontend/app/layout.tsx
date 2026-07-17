@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import { ThemeProvider } from "@/components/theme-provider";
-
 export const metadata: Metadata = {
-  metadataBase: new URL("http://localhost:3000"),
+  metadataBase: new URL(
+    "https://devportfolio-gamma-beige.vercel.app"
+  ),
 
   title: {
     default: "Sowmya Vejerla | Senior Backend Engineer",
@@ -22,7 +22,6 @@ export const metadata: Metadata = {
     "Backend Engineer",
     "Go Developer",
     "Golang",
-    "Go",
     "Microservices",
     "Distributed Systems",
     "REST API",
@@ -42,19 +41,11 @@ export const metadata: Metadata = {
   ],
 
   creator: "Sowmya Vejerla",
-
   publisher: "Sowmya Vejerla",
 
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
   },
 
   icons: {
@@ -64,24 +55,17 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "Sowmya Vejerla | Senior Backend Engineer",
-
     description:
-      "Senior Backend Engineer specializing in Go, Microservices, Distributed Systems, PostgreSQL, Kafka, Docker, Kubernetes and Cloud Native applications.",
-
+      "Senior Backend Engineer specializing in Go, Microservices, Distributed Systems.",
     url: "/",
-
     siteName: "Sowmya Vejerla Portfolio",
-
     locale: "en_US",
-
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-
     title: "Sowmya Vejerla | Senior Backend Engineer",
-
     description:
       "Senior Backend Engineer | Go | Microservices | Distributed Systems",
   },
@@ -95,16 +79,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body className="antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   );
